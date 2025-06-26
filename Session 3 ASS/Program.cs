@@ -1,298 +1,478 @@
-﻿namespace Session_3_ASS;
-
-class Program
+﻿namespace Session_3
 {
-    static void Main(string[] args)
+    class Demo
     {
-        #region Question 1
-        // /*
-        //     Write a program that allows the user to enter a number then print it.
-        // */
-        // Console.WriteLine("Plz Enter a number: ");
-        // int num;
-        // bool isNum = int.TryParse(Console.ReadLine(), out num);
-        // if(isNum) 
-        //     Console.WriteLine($"The Num is : {num}");
-        // else 
-        //     Console.WriteLine("Invalid Input");
-        #endregion
+        // any type
+        // T --> placeholder for any type
+        // T: value type or reference type --> based on val passed  
+        static void Print<T>(T val)
+        {
+            Console.WriteLine(val);
+        }
+        
+        static void Test_print()
+        {
+            // boking --> convert from value type to reference type
+            // unboking -- > convert from reference type to value type
+            Print(10);
+            Print<int>(10);
+            Print("mohamed");
 
-        #region Question 2
+        }
 
-        // /*
-        //   Write C# program that converts a string to an integer, but the string contains non-numeric characters.
-        //   And mention what will happen 
-        // */
-        // Console.WriteLine("Plz Enter a string: ");
-        // string str;
-        // str = Console.ReadLine();
-        // int num;
-        // bool check = int.TryParse(str , out num);
-        // if(check) 
-        //     Console.WriteLine($"The Num is : {num}");
-        // else
-        //     Console.WriteLine("Invalid Input");
-        //
-        // /*
-        //     if u enter non numeric data --> format exception when u do not handle it 
-        //     when use TryParse() --> if string contain non numeric data func returns False  else returns True   
-        // */
-        //
-        #endregion
-        
-        #region Question 3
-        // /*
-        //  * Write C# program that Perform a simple arithmetic operation with floating-point numbers And mention what will happen
-        //  */
-        //
-        // double num1 = 10.7; 
-        // double num2 = 5.4;
-        // double add = num1 + num2;
-        // double sub = num1 - num2;
-        // double mul = num1 * num2;
-        // double div = num1 / num2;
-        // Console.WriteLine($"sum : {add}");
-        // Console.WriteLine($"subtract : {sub}");
-        // Console.WriteLine($"multiply : {mul}");
-        // Console.WriteLine($"divide : {div}");
-        //
-        // // what happen ? 
-        // // work normally and print floating point result 
-        // not highly precision --> if u want this u must use decimal intead of double
-        #endregion
-        
-        #region Question 4
-        /*
-         Write C# program that Extract a substring from a given string. (Search)
-         */
-        // Console.WriteLine("Plz Enter a string: ");
-        // string str = Console.ReadLine();
-        // Console.WriteLine("Plz Enter a substring to extract : ");
-        // string substr = Console.ReadLine();
-        //
-        // int l = 0, r = 0;
-        // bool found = false;
-        // while (r < str.Length)
-        // {
-        //     if (str[r++] == substr[l++])
-        //     {
-        //         if (l == substr.Length)
-        //         {
-        //             found = true;
-        //             break;
-        //         }
-        //     }
-        //     else
-        //     {
-        //         r -= l - 1;
-        //         l = 0;
-        //     }
-        // }
-        // if(found)
-        //     Console.WriteLine("Substring is found");
-        // else
-        //     Console.WriteLine("Not Found");
-        //
-        #endregion
-        
-        #region Question 5
-        // /*
-        //     Write C# program that Assigning one value type variable to another 
-        //     and modifying the value of one variable and mention what will happen
-        //  */
-        // int a = 10;
-        // int b = a;  // copy from a value
-        //
-        // Console.WriteLine("Before modification:");
-        // Console.WriteLine($"a = {a}"); // 10
-        // Console.WriteLine($"b = {b}");  // 10
-        // b = 20; 
-        // Console.WriteLine("After modifying b:");
-        // Console.WriteLine($"a = {a}");  // 10
-        // Console.WriteLine($"b = {b}");  // 20
-        
-        #endregion
-        
-        #region Question 6
-        // /*
-        //  Write C# program that Assigning one reference type variable to another
-        //  and modifying the object through one variable and mention what will happen
-        //  */
-        //
-        // object obj1 = 10 , obj2 = 20;
-        // obj2 = obj1;  // both reference the same boxed value
-        //
-        // Console.WriteLine("Before modification:");
-        // Console.WriteLine($"abj1 = {obj1}"); // 10
-        // Console.WriteLine($"obj2 = {obj2}");  // 10
-        //
-        // obj2 = 20; //  new boxed object containing 20 is created and obj2 points to it.
-        //
-        // Console.WriteLine("After modifying b:");
-        // Console.WriteLine($"abj1 = {obj1}"); // 10
-        // Console.WriteLine($"obj2 = {obj2}");  // 20
+        static void Print_obj(object obj)
+        {
+            Console.WriteLine(obj);
+        }
 
-        #endregion
+        static void Test_printobj()
+        {
+            Print_obj(10);
+            Print_obj("mohamed");
+            Print_obj(10.5);
+        }
 
-        #region  Question 7
-        
-        // /*
-        //  Write C# program that take two string variables and print them as one variable 
-        // */
-        // Console.WriteLine("Plz Enter the first string: ");
-        // string str1 = Console.ReadLine();
-        // Console.WriteLine("Plz Enter the second string: ");
-        // string str2 = Console.ReadLine();
-        // Console.WriteLine(str1 + str2);
+        static void Main(string[] args)
+        {
+            #region object
+            
+            // cons of object:
+            // 1- it requires boxing and unboxing --> this decrease performance
+            // 2- saftey --> u can pass any type to it --> this requires casting 
+            //
+            
+            //  object obj
+            // refer to null 
+            // can refer to any instance of object or datatype that ihiret from object  
+            
+            // int x = 100;
+            // object obj = x;
+            // obj = new object();
+            // obj = "mohamed";
+            // int res = (int)obj+ 100; // casting
+            // Console.WriteLine(res);
+            // int y = (int)obj; // unboking 
+            //
+                #region methods
+                
+                #region tostring()
+                
+                // Point p1 = new Point() {x = 10, y = 20};
+                // Console.WriteLine(p1.ToString());  // Session_3.Point --> due to coming from object
+                // object obj = 9876;
+                // Console.WriteLine(obj.ToString()); // 9876 --> int make override to tostring() but class point do not
+                // int x = 9876;
+                // Console.WriteLine(x.ToString()); // 9876 --> because this come from int : behavior change based on type
+                
+                #endregion
+                
+                #region equals()
+                
+                // Point p1 = new Point() {x = 10, y = 20};
+                // Point p2 = new Point() {x = 10, y = 20};
+                // Console.WriteLine(Equals(p1 , p2)); // False --> because this compare references not values
+                // p1 = p2; // p1 , p2 indicate to the same reference
+                // Console.WriteLine(Equals(p1, p2)); // True --> because this compare references 
 
-        #endregion
-        
-        #region Question 8
-        
-        // /*
-        //  Write a program that calculates the simple interest given the principal amount, 
-        //  rate of interest, and time. The formula for simple interest is 
-        // Interest = (principal * rate * time ) /100.
-        // */
-        // double amount , rate , time;
-        // Console.WriteLine("plz Enter the amount : ");
-        //
-        // while (!Double.TryParse(Console.ReadLine(), out amount) || amount < 0)
-        // {
-        //     Console.WriteLine("invalid amount. Try again");
-        // }
-        //
-        // Console.WriteLine("plz Enter the rate of interrest :");
-        // while (!Double.TryParse(Console.ReadLine(), out rate) || rate < 0)
-        // {
-        //     Console.WriteLine("invalid amount. Try again");
-        // }
-        //
-        // Console.WriteLine("plz Enter the time :");
-        // while (!Double.TryParse(Console.ReadLine() , out time) || time < 0)
-        // {
-        //     Console.WriteLine("invalid amount. Try again");
-        // }
-        //
-        // double interest = (amount * rate * time) / 100;
-        // Console.WriteLine($"Simple Interest is : {interest}");
-        #endregion
+                // int x = 1234 , y = 1234; // value types do not have references
+                // Console.WriteLine(Equals(x, y)); // True --> because this compares values 
 
-        #region  Question 9
+                // object obj1 = 1234 , obj2 = 1234;
+                // Console.WriteLine(obj1.Equals(obj2)); // True --> because this compares values
+                //
+                #endregion
+                
+                #region GetHashCode()
+                
+                // Point p1 = new Point() {x = 10, y = 20};
+                // Point p2 = new Point() {x = 10, y = 20};
+                // Console.WriteLine(p1.GetHashCode());  //32854180
+                // Console.WriteLine(p2.GetHashCode());  //27252167
+                // p1 = p2; // both refer to the same address
+                // Console.WriteLine(p1.GetHashCode());  //27252167
+                // Console.WriteLine(p2.GetHashCode());  //27252167
+                //
+                // int x = 1234 , y = 1234;   // value types 
+                // Console.WriteLine(x.GetHashCode());  // 1234
+                // Console.WriteLine(y.GetHashCode());  // 1234  --> dose not cotain heap (value type)
+                #endregion
+                
+                #region GetType()
+                // Point p1 = new Point() {x = 10, y = 20};
+                // Point p2 = new Point() {x = 10, y = 20};
+                // Console.WriteLine(p1.GetType());  // Session_3.Point
+                // Console.WriteLine(p2.GetType());  // Session_3.Point
+                // int x = 1234 , y = 1234;   
+                // Console.WriteLine(x.GetType());  // System.Int32
+                // Console.WriteLine(y.GetType());  // System.Int32
+                //
+                // string name = "mohamed";
+                // object obj = name;  // upcasting --> string inherit from object class --> make child and set parent = child
+                // Console.WriteLine(obj.GetType());  // System.String --> return real type: check type at runtime 
+                //
+                #endregion
+                
+                #endregion
 
-        // /*
-        //   Write a program that calculates the Body Mass Index (BMI) given a person's weight in kilograms
-        //   and height in meters. The formula for BMI is
-        //   BMI = (Weight)/(Height*Height)
-        //  */
-        //
-        // double weight, height;
-        //
-        // Console.Write("plz Enter ur weight in kilograms: ");
-        // while (!double.TryParse(Console.ReadLine(), out weight) || weight <= 0)
-        // {
-        //     Console.Write("Invalid input. Please enter a positive num : ");
-        // }
-        //
-        // Console.Write("plz Enter ur height in meters: ");
-        // while (!double.TryParse(Console.ReadLine(), out height) || height <= 0)
-        // {
-        //     Console.Write("Invalid input. Please enter a positive num : ");
-        // }
-        //
-        // double bmi = weight / (height * height);
-        // Console.WriteLine("BMI =  "+bmi);
-        #endregion
-        
-        #region Question 10
-        
-        // /*
-        //     Write a program that takes the date from the user and displays it in various formats using string interpolation. (Search)
-        //     Ex:
-        //     Today’s date : 20 , 11 , 2001
-        //     Today's date : 20 / 11 / 2001
-        //     Today's date : 20 – 11 – 2001
-        //  */
-        //
-        // int day, month, year;
-        //
-        // Console.Write("Enter day: ");
-        // while (!int.TryParse(Console.ReadLine(), out day) || day < 1 || day > 31)
-        // {
-        //     Console.Write("Invalid input. Enter day (1-31): ");
-        // }
-        //
-        // Console.Write("Enter month: ");
-        // while (!int.TryParse(Console.ReadLine(), out month) || month < 1 || month > 12)
-        // {
-        //     Console.Write("Invalid input. Enter month (1-12): ");
-        // }
-        //
-        // Console.Write("Enter year: ");
-        // while (!int.TryParse(Console.ReadLine(), out year) || year < 1)
-        // {
-        //     Console.Write("Invalid input. Enter year: ");
-        // }
-        // Console.WriteLine($"Today's date : {day} , {month} , {year}");
-        // Console.WriteLine($"Today's date : {day} / {month} / {year}");
-        // Console.WriteLine($"Today's date : {day} - {month} - {year}");
-        
-        
-        // // another way 
-        
-        // Console.Write("Enter date (e.g. 2025-06-26): ");
-        // DateTime date = DateTime.Parse(Console.ReadLine());
-        //
-        // Console.WriteLine($"Today's date : {date.Day} , {date.Month} , {date.Year}");
-        // Console.WriteLine($"Today's date : {date.Day} / {date.Month} / {date.Year}");
-        // Console.WriteLine($"Today's date : {date.Day} - {date.Month} - {date.Year}");
-        
-        #endregion
-        
-        #region Question 11
-        
-        /*
-         * Console.WriteLine($"The event is on {date:MM/dd/yyyy}");
-             a-The event is on 14/06/2024
-             b-The event is on 2024-06-14
-             c-The event is on 06/14/2024
-             d-The event is on June 14, 2024
-         */
-        
-        // output : c
-        
-        #endregion
+                #endregion
+                
+            #region Fraction & discard
+            
+            // Float: 
+            
+            // float x = 12.3456; //invalid casting and 12.3456 : double because this is default in c# 
+            //float y = 12.3456F; //valid 
+            // float z = 10; // valid
+            // Console.WriteLine(z);
+            
+            // float x = 3 / 2; // 1
+            // Console.WriteLine(x);
+            // float y = 3 / 2F; // 1.5
+            // y = 3F / 2;   // 1.5
+            // Console.WriteLine(y);
+            
+            // Decimal:
+            
+            //decimal a = 10.12345; // invalid
+            // decimal b = 10.12345M; // valid casting
+            // Console.WriteLine(b);
+            
+            
+            // Discard  , Digit separator [_]  c# 7.0 feature : for readability
 
-        #region Question 12
+            // int num = 100_00_00; // separator does not appear in print
+            // Console.WriteLine(num);
+            
+            // discard second parameter in this func
+            // int.TryParse(Console.ReadLine(), out _);
 
-        /*
-        Which of the following statements is correct about the C#.NET code snippet given below?
-            int d; 
-            d = Convert.ToInt32( !(30 < 20) );
-            A value 0 will be assigned to d.
-            A value 1 will be assigned to d.
-            A value -1 will be assigned to d.
-            The code reports an error.
-            The code snippet will work correctly if ! is replaced by Not.
-         */
-        
-        // output : A value 1 will be assigned to d.
+            // int num = 100000000;
+            // Console.WriteLine($"{num:c}");  // string interpolation
+            
+            #endregion
+            
+            #region Implicit & Explicit Casting
+            
+            // Implicit Casting [safe casting]
+            //
+            // int x = 100; // 4 bytes in stack 
+            // long y; // 8 bytes in stack 
+            // y = x;
+            // // x = y; // invalid  [explicit casting] unsafe
+            // y = 1000000000000000000;
+            // x = (int)y; // arthmetic overflow
 
-        #endregion
-        
-        #region Question 13
-        
-        /*
-        Which of the following is the correct output for the C# code given below?
-        Console.WriteLine(13 / 2 + " " + 13 % 2); 
-        a-6.5 1
-        b-6.5 0
-        c-6 0
-        d-6 1
-        e-6.5 6.5
-        */
-        // output : d) 6 1
-        
-        #endregion
+            // how handle : 
+            
+            // long x = 1000000000000000000;
+            // try
+            // {
+            //     checked
+            //     {
+            //         int y = (int)x;
+            //         unchecked
+            //         {
+            //             Console.WriteLine(y);
+            //         }
+            //     }
+            // }
+            // catch(OverflowException e)
+            // {
+            //     Console.WriteLine(e.Message);
+            // }
+
+            // Object x = 1000;
+            // if (x.GetType() == typeof(int))
+            //     Console.WriteLine(x);
+            // else
+            //     Console.WriteLine("Num is large");
+            
+            // [int - float ]
+            
+            // implicit   int --> float
+            //
+            // int x = 10;
+            // float y = x; // valid casting
+            // Console.WriteLine(y); // 10
+            
+            // // explicit  float --> int
+            // float x = 10.5F;
+            // int y = x; // invalid casting
+            //
+            // y = (int)x;
+            // Console.WriteLine(y);
+
+            #endregion
+            
+            #region Casting [Convert-Parse-TryParse]
+            
+            #region convert
+            // Console.WriteLine("Please enter a number: ");
+            // Console.WriteLine("name");
+            // string input = Console.ReadLine();
+            // Console.WriteLine("age");
+            // int age = Convert.ToInt32(Console.ReadLine());
+            // //int? x = null;  // nullable type
+            // Console.WriteLine("salary");
+            // double salary = Convert.ToDouble(Console.ReadLine());
+            // Console.Clear();
+            // Console.Beep(1000 , 3000);
+            // Console.WriteLine("Name: " + input);
+            // Console.WriteLine("Age: " + age);
+            // Console.WriteLine("Salary: " + salary);
+            
+            #endregion
+            
+            #region parse
+            // both convert & parse work in good secnario not in worst 
+            // Console.WriteLine("Please enter a number: ");
+            // Console.WriteLine("name");
+            // string input = Console.ReadLine();
+            // Console.WriteLine("age");
+            // int age = int.Parse(Console.ReadLine()); 
+            // //int? x = null;  // nullable type
+            // Console.WriteLine("salary");
+            // double salary = Double.Parse(Console.ReadLine());
+            // Console.Clear();
+            // Console.Beep(1000 , 3000);
+            // Console.WriteLine("Name: " + input);
+            // Console.WriteLine("Age: " + age);
+            // Console.WriteLine("Salary: " + salary);
+            #endregion
+            
+            #region TryParse
+            // Console.WriteLine("Please enter a number: ");
+            // Console.WriteLine("name");
+            // string input = Console.ReadLine();
+            // Console.WriteLine("age");
+            // int age;
+            // bool isAgeParsed = int.TryParse(Console.ReadLine() ,out age);
+            // //int? x = null;  // nullable type
+            // Console.WriteLine("salary");
+            // bool isSalaryParsed = Double.TryParse(Console.ReadLine() , out double salary);
+            // Console.Clear();
+            // Console.Beep(1000 , 3000);
+            // Console.WriteLine($"isAgeParsed = {isAgeParsed}");
+            // Console.WriteLine("Name: " + input);
+            // Console.WriteLine("Age: " + age);
+            // Console.WriteLine($"isSalaryParsed = {isSalaryParsed}");
+            // Console.WriteLine("Salary: " + salary);
+            #endregion
+
+            #endregion
+
+            #region Unary op
+            //int x = 10;
+            #region Increment 
+            // // 1- prefix  --> increment then print  
+            // Console.WriteLine(++x); // 11
+            // // 2- postfix --> print then print incerment
+            // Console.WriteLine(x++); // 10
+            #endregion
+            
+            #region Decrement 
+            // // 1- prefix  --> decrement then print  
+            // Console.WriteLine(--x); // 9
+            // // 2- postfix --> print then print decrement
+            // Console.WriteLine(x--);  // 10
+            #endregion
+            
+            #endregion
+
+            #region bin / arethmetic op
+            //
+            // int a = 10, b = 4;
+            // Console.WriteLine(a+b); // 14
+            // Console.WriteLine(a/b); // 2
+            // Console.WriteLine(a%b); // 2
+            // // onother way to compute modulus
+            // Console.WriteLine(a -(a/b)*b); // 2
+            //
+            // // even  n%2 == 0
+            // // odd   n%2 != 0   
+
+            #endregion
+
+            #region assign op
+
+            //int a = 10;
+            // assign only
+            //  a = 5;
+            // Console.WriteLine(a); // 5
+            
+            // add & assign
+            // a += 2; 
+            // Console.WriteLine(a); // 7
+            // a -= 3; 
+            // Console.WriteLine(a); // 4
+
+            //a = 5;
+            // mul & assign
+            // a *= 2;
+            // Console.WriteLine(a); // 10
+            //  a /= 2;
+            // Console.WriteLine(a); // 5
+            // a %= 5;
+            // Console.WriteLine(a); // 0
+            
+
+            #endregion
+            
+            #region comparsion op [relational op]
+            
+            // int a = 10, b = 5;
+            // // equal
+            // Console.WriteLine("a == b ? " + (a == b)); // flase
+            //
+            // // not equal
+            // Console.WriteLine("a != b ? " + (a != b));  // true
+            //
+            // // greater than 
+            // Console.WriteLine("a > b ? " + (a > b));  // true
+            //
+            // // less than 
+            // Console.WriteLine("a < b ? " + (a < b));  // false
+            //
+            // // greater than or equal 
+            // Console.WriteLine("a >= b ? " + (a >= b));  // true
+            //
+            // //less than or equal 
+            // Console.WriteLine("a <= b ? " + (a <= b));  // false
+            #endregion
+            
+            #region logical op
+            
+            // bool a = true, b = false;
+            // Not op
+            // !1 --> 0
+            // !0 --> 1
+            //Console.WriteLine("(!a)" + !a);
+            
+
+            // logical And [short circuit]
+            // 1 && 1 == 1
+            // 1 && 0 == 0
+            // 0 && 0 == 0
+            //Console.WriteLine("(a && b : " + (a && b));
+
+            //logical OR [short circuit --> not require check all]
+            // 1 || 1 = 1
+            // 1 || 0 = 0
+
+            //Console.WriteLine("(a || b : "+ (a || b));
+
+            #endregion
+            
+            #region bitwise op
+
+            // // Bitwise AND
+            // //     1011
+            // //     0110
+            // //res: 0010
+            // int a = 5, b = 4; // a --> 101 , b = 100
+            // Console.WriteLine(a & b); // 1 --> 100
+            //
+            // // Bitwise OR
+            // // both true then or --> true
+            // Console.WriteLine(a|b); // 1 --> 101
+            //
+            // // XOR
+            // // both true or both false --> xor: false 
+            // // both not equal -> xor: true
+            // Console.WriteLine(a^b); // 1 --> 1
+            //
+            // // NOT --> invert all digits
+            // Console.WriteLine(~a); // 2s complement --> -6
+            //
+            // // shift left //  *2
+            // Console.WriteLine(a << 1); // 1010
+            //
+            // // shift right  //  [/2]
+            // Console.WriteLine(a >> 1);  // 10
+            //
+            // search 
+            // a >>> 1 --> unsigned shift right
+            
+            #endregion
+            
+            #region ternary op
+
+            // int a = 10, b = 5;
+            // string res = (a > b ? "a > b" : "b > a");
+            //
+
+            #endregion
+
+            #region piriority op
+
+            int a = 10, b = 20, c = 30;
+            int res = a - b * c; // * first --> then subtract 
+            Console.WriteLine(res); 
+            
+            res = (a - b) * c;
+            Console.WriteLine(res);
+            
+            res = a + b * c / a; // * / +
+            Console.WriteLine(res);
+            
+            res = (a + b) % c;
+            Console.WriteLine(res);
+            
+            int q6 = a + b++; // 30
+            Console.WriteLine(q6);
+            q6 = a +++ b;  // 31
+            Console.WriteLine(q6);
+            
+            
+            #endregion
+
+            #region string formatting
+
+            // string interpolation 
+            // // equ -- > 10+5
+            // int a = 10, b = 20 , res= a+b;
+            // string msg = $"equ : {a}+{b} = {res}";
+            // Console.WriteLine(msg);
+
+
+            #endregion
+
+
+            #region control stat
+
+            // conditional stat 
+            // int a = 10, b = 20;
+            // if (a > b) a++;
+            // else if (b > a) b++;
+            // else
+            // {
+            //     a++; b++;
+            // }
+            //
+            // //switch 
+            //     
+            // // looping / interation stat 
+            // for (int i = a; i <= b; i++)
+            // {
+            //     Console.WriteLine(i);
+            // }
+            //
+            // while (a < b)
+            // {
+            //     Console.WriteLine(a);
+            //     a++;
+            // }
+            //
+            // for (int i = a; i <= b; i++)
+            // {
+            //     if (i % 2 == 0) break;
+            // }
+            //
+            // // jumbing stat
+
+            #endregion
+
+
+        }
     }
 }
