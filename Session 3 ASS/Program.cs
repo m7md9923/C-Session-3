@@ -39,5 +39,27 @@ class Program
         // */
         //
         #endregion
+        
+        #region Question 3
+        // /*
+        //  * Write C# program that Perform a simple arithmetic operation with floating-point numbers And mention what will happen
+        //  */
+        //
+        // double num1 = 10.7; 
+        // double num2 = 5.4;
+        // double add = num1 + num2;
+        // double sub = num1 - num2;
+        // double mul = num1 * num2;
+        // double div = num1 / num2;
+        // Console.WriteLine($"sum : {add}");
+        // Console.WriteLine($"subtract : {sub}");
+        // Console.WriteLine($"multiply : {mul}");
+        // Console.WriteLine($"divide : {div}");
+        //
+        // // what happen ? 
+        // // work normally and print floating point result 
+        // not highly precision --> if u want this u must use decimal intead of double
+        #endregion
+        
     }
 }
