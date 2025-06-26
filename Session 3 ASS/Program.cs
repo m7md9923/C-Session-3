@@ -94,5 +94,23 @@ class Program
         //     Console.WriteLine("Not Found");
         //
         #endregion
+        
+        #region Question 5
+        // /*
+        //     Write C# program that Assigning one value type variable to another 
+        //     and modifying the value of one variable and mention what will happen
+        //  */
+        // int a = 10;
+        // int b = a;  // b = 10
+        //
+        // Console.WriteLine("Before modification:");
+        // Console.WriteLine($"a = {a}"); // 10
+        // Console.WriteLine($"b = {b}");  // 10
+        // b = 20; 
+        // Console.WriteLine("After modifying b:");
+        // Console.WriteLine($"a = {a}");  // 10
+        // Console.WriteLine($"b = {b}");  // 20
+        
+        #endregion
     }
 }
