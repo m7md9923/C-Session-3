@@ -133,5 +133,18 @@ class Program
         // Console.WriteLine($"obj2 = {obj2}");  // 20
 
         #endregion
+
+        #region  Question 7
+        
+        // /*
+        //  Write C# program that take two string variables and print them as one variable 
+        // */
+        // Console.WriteLine("Plz Enter the first string: ");
+        // string str1 = Console.ReadLine();
+        // Console.WriteLine("Plz Enter the second string: ");
+        // string str2 = Console.ReadLine();
+        // Console.WriteLine(str1 + str2);
+
+        #endregion
     }
 }
