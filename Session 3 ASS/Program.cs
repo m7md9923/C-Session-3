@@ -203,5 +203,40 @@ class Program
         // double bmi = weight / (height * height);
         // Console.WriteLine("BMI =  "+bmi);
         #endregion
+        
+        #region Question 10
+        
+        // /*
+        //     Write a program that takes the date from the user and displays it in various formats using string interpolation. (Search)
+        //     Ex:
+        //     Today’s date : 20 , 11 , 2001
+        //     Today's date : 20 / 11 / 2001
+        //     Today's date : 20 – 11 – 2001
+        //  */
+        //
+        // int day, month, year;
+        //
+        // Console.Write("Enter day: ");
+        // while (!int.TryParse(Console.ReadLine(), out day) || day < 1 || day > 31)
+        // {
+        //     Console.Write("Invalid input. Enter day (1-31): ");
+        // }
+        //
+        // Console.Write("Enter month: ");
+        // while (!int.TryParse(Console.ReadLine(), out month) || month < 1 || month > 12)
+        // {
+        //     Console.Write("Invalid input. Enter month (1-12): ");
+        // }
+        //
+        // Console.Write("Enter year: ");
+        // while (!int.TryParse(Console.ReadLine(), out year) || year < 1)
+        // {
+        //     Console.Write("Invalid input. Enter year: ");
+        // }
+        // Console.WriteLine($"Today's date : {day} , {month} , {year}");
+        // Console.WriteLine($"Today's date : {day} / {month} / {year}");
+        // Console.WriteLine($"Today's date : {day} - {month} - {year}");
+        
+        #endregion
     }
 }
