@@ -237,6 +237,30 @@ class Program
         // Console.WriteLine($"Today's date : {day} / {month} / {year}");
         // Console.WriteLine($"Today's date : {day} - {month} - {year}");
         
+        
+        // // another way 
+        
+        // Console.Write("Enter date (e.g. 2025-06-26): ");
+        // DateTime date = DateTime.Parse(Console.ReadLine());
+        //
+        // Console.WriteLine($"Today's date : {date.Day} , {date.Month} , {date.Year}");
+        // Console.WriteLine($"Today's date : {date.Day} / {date.Month} / {date.Year}");
+        // Console.WriteLine($"Today's date : {date.Day} - {date.Month} - {date.Year}");
+        
+        #endregion
+        
+        #region Question 11
+        
+        /*
+         * Console.WriteLine($"The event is on {date:MM/dd/yyyy}");
+             a-The event is on 14/06/2024
+             b-The event is on 2024-06-14
+             c-The event is on 06/14/2024
+             d-The event is on June 14, 2024
+         */
+        
+        // output : c
+        
         #endregion
     }
 }
