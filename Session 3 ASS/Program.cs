@@ -178,6 +178,30 @@ class Program
         // Console.WriteLine($"Simple Interest is : {interest}");
         #endregion
 
+        #region  Question 9
 
+        // /*
+        //   Write a program that calculates the Body Mass Index (BMI) given a person's weight in kilograms
+        //   and height in meters. The formula for BMI is
+        //   BMI = (Weight)/(Height*Height)
+        //  */
+        //
+        // double weight, height;
+        //
+        // Console.Write("plz Enter ur weight in kilograms: ");
+        // while (!double.TryParse(Console.ReadLine(), out weight) || weight <= 0)
+        // {
+        //     Console.Write("Invalid input. Please enter a positive num : ");
+        // }
+        //
+        // Console.Write("plz Enter ur height in meters: ");
+        // while (!double.TryParse(Console.ReadLine(), out height) || height <= 0)
+        // {
+        //     Console.Write("Invalid input. Please enter a positive num : ");
+        // }
+        //
+        // double bmi = weight / (height * height);
+        // Console.WriteLine("BMI =  "+bmi);
+        #endregion
     }
 }
