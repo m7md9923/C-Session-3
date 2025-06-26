@@ -5,16 +5,39 @@ class Program
     static void Main(string[] args)
     {
         #region Question 1
-        /*
-            Write a program that allows the user to enter a number then print it.
-        */
-        Console.WriteLine("Plz Enter a number: ");
-        int num;
-        bool isNum = int.TryParse(Console.ReadLine(), out num);
-        if(isNum) 
-            Console.WriteLine($"The Num is : {num}");
-        else 
-            Console.WriteLine("Invalid Input");
+        // /*
+        //     Write a program that allows the user to enter a number then print it.
+        // */
+        // Console.WriteLine("Plz Enter a number: ");
+        // int num;
+        // bool isNum = int.TryParse(Console.ReadLine(), out num);
+        // if(isNum) 
+        //     Console.WriteLine($"The Num is : {num}");
+        // else 
+        //     Console.WriteLine("Invalid Input");
+        #endregion
+
+        #region Question 2
+
+        // /*
+        //   Write C# program that converts a string to an integer, but the string contains non-numeric characters.
+        //   And mention what will happen 
+        // */
+        // Console.WriteLine("Plz Enter a string: ");
+        // string str;
+        // str = Console.ReadLine();
+        // int num;
+        // bool check = int.TryParse(str , out num);
+        // if(check) 
+        //     Console.WriteLine($"The Num is : {num}");
+        // else
+        //     Console.WriteLine("Invalid Input");
+        //
+        // /*
+        //     if u enter non numeric data --> format exception when u do not handle it 
+        //     when use TryParse() --> if string contain non numeric data func returns False  else returns True   
+        // */
+        //
         #endregion
     }
 }
