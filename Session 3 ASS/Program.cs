@@ -262,5 +262,22 @@ class Program
         // output : c
         
         #endregion
+
+        #region Question 12
+
+        /*
+        Which of the following statements is correct about the C#.NET code snippet given below?
+            int d; 
+            d = Convert.ToInt32( !(30 < 20) );
+            A value 0 will be assigned to d.
+            A value 1 will be assigned to d.
+            A value -1 will be assigned to d.
+            The code reports an error.
+            The code snippet will work correctly if ! is replaced by Not.
+         */
+        
+        // output : A value 1 will be assigned to d.
+
+        #endregion
     }
 }
