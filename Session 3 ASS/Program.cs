@@ -101,7 +101,7 @@ class Program
         //     and modifying the value of one variable and mention what will happen
         //  */
         // int a = 10;
-        // int b = a;  // b = 10
+        // int b = a;  // copy from a value
         //
         // Console.WriteLine("Before modification:");
         // Console.WriteLine($"a = {a}"); // 10
@@ -111,6 +111,27 @@ class Program
         // Console.WriteLine($"a = {a}");  // 10
         // Console.WriteLine($"b = {b}");  // 20
         
+        #endregion
+        
+        #region Question 6
+        // /*
+        //  Write C# program that Assigning one reference type variable to another
+        //  and modifying the object through one variable and mention what will happen
+        //  */
+        //
+        // object obj1 = 10 , obj2 = 20;
+        // obj2 = obj1;  // both reference the same boxed value
+        //
+        // Console.WriteLine("Before modification:");
+        // Console.WriteLine($"abj1 = {obj1}"); // 10
+        // Console.WriteLine($"obj2 = {obj2}");  // 10
+        //
+        // obj2 = 20; //  new boxed object containing 20 is created and obj2 points to it.
+        //
+        // Console.WriteLine("After modifying b:");
+        // Console.WriteLine($"abj1 = {obj1}"); // 10
+        // Console.WriteLine($"obj2 = {obj2}");  // 20
+
         #endregion
     }
 }
