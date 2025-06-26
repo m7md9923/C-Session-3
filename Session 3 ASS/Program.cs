@@ -61,5 +61,38 @@ class Program
         // not highly precision --> if u want this u must use decimal intead of double
         #endregion
         
+        #region Question 4
+        /*
+         Write C# program that Extract a substring from a given string. (Search)
+         */
+        // Console.WriteLine("Plz Enter a string: ");
+        // string str = Console.ReadLine();
+        // Console.WriteLine("Plz Enter a substring to extract : ");
+        // string substr = Console.ReadLine();
+        //
+        // int l = 0, r = 0;
+        // bool found = false;
+        // while (r < str.Length)
+        // {
+        //     if (str[r++] == substr[l++])
+        //     {
+        //         if (l == substr.Length)
+        //         {
+        //             found = true;
+        //             break;
+        //         }
+        //     }
+        //     else
+        //     {
+        //         r -= l - 1;
+        //         l = 0;
+        //     }
+        // }
+        // if(found)
+        //     Console.WriteLine("Substring is found");
+        // else
+        //     Console.WriteLine("Not Found");
+        //
+        #endregion
     }
 }
