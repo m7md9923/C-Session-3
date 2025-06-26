@@ -146,5 +146,38 @@ class Program
         // Console.WriteLine(str1 + str2);
 
         #endregion
+        
+        #region Question 8
+        
+        // /*
+        //  Write a program that calculates the simple interest given the principal amount, 
+        //  rate of interest, and time. The formula for simple interest is 
+        // Interest = (principal * rate * time ) /100.
+        // */
+        // double amount , rate , time;
+        // Console.WriteLine("plz Enter the amount : ");
+        //
+        // while (!Double.TryParse(Console.ReadLine(), out amount) || amount < 0)
+        // {
+        //     Console.WriteLine("invalid amount. Try again");
+        // }
+        //
+        // Console.WriteLine("plz Enter the rate of interrest :");
+        // while (!Double.TryParse(Console.ReadLine(), out rate) || rate < 0)
+        // {
+        //     Console.WriteLine("invalid amount. Try again");
+        // }
+        //
+        // Console.WriteLine("plz Enter the time :");
+        // while (!Double.TryParse(Console.ReadLine() , out time) || time < 0)
+        // {
+        //     Console.WriteLine("invalid amount. Try again");
+        // }
+        //
+        // double interest = (amount * rate * time) / 100;
+        // Console.WriteLine($"Simple Interest is : {interest}");
+        #endregion
+
+
     }
 }
